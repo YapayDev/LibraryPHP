@@ -136,7 +136,6 @@ class TrayCheckoutTransaction extends TrayCheckoutService
 			$fields['transaction_product['.$key.'][price_unit]']  = $prod->getPriceUnit();
 		}
 		
-		$fields['transaction[order_number]'] 	= $this->transaction->getOrderNumber();
 		$fields['payment[payment_method_id]'] 	= $this->payment->getPaymentMethodId();
 	    $fields['payment[split]'] 				= $this->payment->getSplit();
 	    $fields['payment[card_name]'] 			= $this->payment->getCardName();
