@@ -98,14 +98,12 @@ class TrayCheckoutTransaction extends TrayCheckoutService
 	protected function postFields() {
 		$fields= array(
 			'token_account' 	=> Config::$TOKEN,
-			'price_discount' 	=> number_format( $this->transaction->getPriceDiscount(), 2, '.', ''),
-			'price_additional' 	=> number_format( $this->transaction->getPriceAdditional(), 2, '.', ''),
-			'shipping_price' 	=> number_format( $this->transaction->getShippingPrice(), 2, '.', ''),
-			'shipping_type' 	=> $this->transaction->getShippingPrice(),		
-			'total_paid' 		=> number_format( $this->transaction->getTotalPaid(), 2, '.', ''),
-			'url_notification' 	=> $this->transaction->getUrlNotification(),
-			'url_success' 		=> $this->transaction->getUrlSuccess(),
-			'url_process' 		=> $this->transaction->getUrlProcess()
+			'transaction[order_number]' 	=> $this->transaction->getOrderNumber(),
+			'transaction[price_discount]' 	=> number_format( $this->transaction->getPriceDiscount(), 2, '.', ''),
+			'transaction[price_additional]' 	=> number_format( $this->transaction->getPriceAdditional(), 2, '.', ''),
+			'transaction[shipping_price]' 	=> number_format( $this->transaction->getShippingPrice(), 2, '.', ''),
+			'transaction[shipping_type]' 	=> $this->transaction->getShippingPrice(),		
+			'transaction[url_notification]' 	=> $this->transaction->getUrlNotification()
 		);
 		
 		/** OS DADOS CLIENTE **/
